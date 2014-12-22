@@ -20,8 +20,12 @@
     angular.module('ChrissiChristmasGift2014App', [])
 		.controller('baseController', ['$scope', function($scope) {
 			$scope.password = "";
+			$scope.contentCounter = 1;
 			$scope.validatePassword = function(){
-				alert("Leider nein :).");
+				if($scope.contentCounter === 0)
+						$scope.contentCounter = 1;		
+				else
+					$scope.contentCounter = 0;	
 			};
 		}]);
 	</script>
@@ -32,7 +36,7 @@
 		<div class="jumbotron" ng-controller="baseController">
 			<h3>Was kann dein Geschenk wohl sein??? Gib das richtige Passwort ein und finde es heraus! :)</h3>
 			<p><input type="password" ng-model="password" /></p>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length != 0">
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length != 0" ng-click="validatePassword()">
 			  Probiers aus :)
 			</button>
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length == 0" ng-disabled="true">
@@ -43,10 +47,14 @@
 				<div class="modal-content">
 				  <div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">Leider nein...</h4>
+					<h4 class="modal-title" ng-show="contentCounter == 0">Leider nein...</h4>
+					<h4 class="modal-title" ng-show="contentCounter == 1">Wooooow...</h4>
 				  </div>
 				  <div class="modal-body">
-					<p>Leider das falsche Passwort, aber vielleicht kann dir ja jemand einen Tipp geben :)?</p>
+					<p ng-show="contentCounter == 0">Leider das falsche Passwort, aber vielleicht kann dir ja jemand einen Tipp geben :)?</p>
+					<p ng-show="contentCounter == 1">Vielleicht bin ich dein Geschenk? :)?
+						<img src="http://s1.eltern.de/thumbnails/0001/00000000001/05/8d/400pxx300px/058d4f372d6d28d5cb240d3ca54245b1uniqueidhund_geschenk.jpg"/>
+					</p>
 				  </div>
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
