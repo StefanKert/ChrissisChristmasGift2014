@@ -23,8 +23,13 @@
 			$scope.contentCounter = -1;
 			$scope.validatePassword = function(){
 				$scope.contentCounter++;
-				if($scope.contentCounter > 3)
-					$scope.contentCounter = 0;
+				if($scope.contentCounter > 3){
+					alert("Leider zu oft das falsche Passwort eingegeben. Wenn du auf OK klickst wird das Geschenk zerstört.")
+					alert("Nur ein Scherz.");
+					alert("Du musst jetzt nur noch 100 Meldungen Bestätigen.");
+					alert("Auch nur ein Scherz. Du wirst jetzt zu google weitergeleitet vielleicht hilft dir da jemand.");
+					window.location.href = "http://google.com";
+				}
 			};
 		}]);
 	</script>
@@ -33,7 +38,7 @@
   <body>
 	<div class="container">
 		<div class="jumbotron" ng-controller="baseController">
-			<h3>Was kann dein Geschenk wohl sein??? Gib das richtige Passwort ein und finde es heraus! :)</h3>
+			<h3>Was kann dein Geschenk wohl sein??? Gib das richtige Passwort ein und finde es heraus! :) (Version 1.3)</h3>
 			<p><input type="password" ng-model="password" /></p>
 			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length != 0" ng-click="validatePassword()">
 			  Probiers aus :)
