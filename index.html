@@ -20,12 +20,11 @@
     angular.module('ChrissiChristmasGift2014App', [])
 		.controller('baseController', ['$scope', function($scope) {
 			$scope.password = "";
-			$scope.contentCounter = 1;
+			$scope.contentCounter = -1;
 			$scope.validatePassword = function(){
-				if($scope.contentCounter === 0)
-						$scope.contentCounter = 1;		
-				else
-					$scope.contentCounter = 0;	
+				$scope.contentCounter++;
+				if($scope.contentCounter > 3)
+					$scope.contentCounter = 0;
 			};
 		}]);
 	</script>
@@ -49,11 +48,18 @@
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					<h4 class="modal-title" ng-show="contentCounter == 0">Leider nein...</h4>
 					<h4 class="modal-title" ng-show="contentCounter == 1">Wooooow...</h4>
+					<h4 class="modal-title" ng-show="contentCounter == 2">Oder vielleicht...</h4>
+					<h4 class="modal-title" ng-show="contentCounter == 3">Aber nein...</h4>
 				  </div>
 				  <div class="modal-body">
 					<p ng-show="contentCounter == 0">Leider das falsche Passwort, aber vielleicht kann dir ja jemand einen Tipp geben :)?</p>
-					<p ng-show="contentCounter == 1">Vielleicht bin ich dein Geschenk? :)?
-						<img src="http://s1.eltern.de/thumbnails/0001/00000000001/05/8d/400pxx300px/058d4f372d6d28d5cb240d3ca54245b1uniqueidhund_geschenk.jpg"/>
+					<p ng-show="contentCounter == 1">Vielleicht bin ich dein Geschenk?  Probier es erneut und finde es heraus. <br/>
+						<img src="http://s1.eltern.de/thumbnails/0001/00000000001/05/8d/400pxx300px/058d4f372d6d28d5cb240d3ca54245b1uniqueidhund_geschenk.jpg" class="img-circle"/>
+					</p>
+					<p ng-show="contentCounter == 2">Vielleicht bin es auch ich :)??<br/>
+						<img src="http://www.allmystery.de/i/t2fbb04_13004306.jpg" width="400" height="300" class="img-circle"/>
+					</p>
+					<p ng-show="contentCounter == 3">Doch nicht. Es ist etwas gaaaanz anderes :)
 					</p>
 				  </div>
 				  <div class="modal-footer">
