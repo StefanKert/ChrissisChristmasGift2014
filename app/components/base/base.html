@@ -10,9 +10,22 @@
 			<li>Vielleicht fällt mir nochwas ein </li>
 		</ol>
 		<br>
-		(Version 1.6)
+		(Version 2.0)
 		<br>
 		<br>
 		<a role="button" class="btn btn-primary btn-lg btn-block" ui-sref="thinkingAboutYou">Ok vielleicht noch ein Tipp :)</a>
+		<br>
+		<br>
+		<br>
+		<p>
+			Hier kannst du die gefundenen Hinweise eingeben:
+			<p><input type="text" ng-model="password" /></p>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length != 0" ng-click="validatePassword()">
+				Drück mich :)
+			</button>
+			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length == 0" ng-disabled="true">
+				Gib etwas ein :)
+			</button>
+		</p>
 	</center>
 </div>

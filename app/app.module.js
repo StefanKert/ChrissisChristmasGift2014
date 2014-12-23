@@ -1,13 +1,10 @@
 ﻿var app = angular.module('ChrissiChristmasGift2014App', ['ui.router']);
 
-
 app.controller('baseController', function($scope, $state) {
 	$scope.password = "";
 	$scope.validatePassword = function(){
-		if($scope.password === "23.03.2011"){
-			alert("Juhuu richtig");
-			$state.go("wichtigstesDatum");
-		}
+		console.log($scope.password);
+		$state.go($scope.password);
 	};
 });
 
@@ -27,6 +24,136 @@ app.controller('wichtigstesDatumController', function($scope, $state) {
 		alert("Schatzi :) Mobile Geräte sind nicht erlaubt :P probiers am Computer nochmal :).");
 		$state.go("home");
 	}
+});
+
+app.controller('startController', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "23.03.2011"){
+			alert("Juhuu richtig");
+			$state.go("startOK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle1Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Wind"){
+			alert("Juhuu richtig");
+			$state.go("riddle1OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle2Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Lucario"){
+			alert("Juhuu richtig");
+			$state.go("riddle2OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle3Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Bodyweight Training"){
+			alert("Juhuu richtig");
+			$state.go("riddle3OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle4Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "27" || $scope.password === "Siebenundzwanzig"){
+			alert("Juhuu richtig");
+			$state.go("riddle4OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle5Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Yellowcard"){
+			alert("Juhuu richtig");
+			$state.go("riddle5OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle6Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "HTML"){
+			alert("Juhuu richtig");
+			$state.go("riddle6OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle7Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Marcel Hirscher"){
+			alert("Juhuu richtig");
+			$state.go("riddle7OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle8Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Safal" || $scope.password === "Schafal"){
+			alert("Juhuu richtig");
+			$state.go("riddle8OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
+});
+
+app.controller('riddle9Controller', function($scope, $state) {
+	$scope.password = "";
+	$scope.validatePassword = function(){
+		if($scope.password === "Disneyland"){
+			alert("Juhuu richtig");
+			$state.go("riddle9OK");
+		}
+		else {
+			alert("Leider falsch. Probiers nochmal :)");
+		}
+	};
 });
 
 app.controller('AppController', function ($scope, $http, $rootScope, $location, $state) {
