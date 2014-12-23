@@ -3,7 +3,7 @@
         .state('home', {
             url: '/home',
 			controller: 'baseController',
-            templateUrl: '/app/components/base/base.html'
+            templateUrl: 'app/components/base/base.html'
         })
         .state('customers', {
             url: '/customers',
