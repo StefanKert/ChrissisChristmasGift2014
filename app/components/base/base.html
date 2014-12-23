@@ -1,23 +1,23 @@
-		<div class="jumbotron" ng-controller="baseController">
-			<h3>Was kann dein Geschenk wohl sein??? Gib das richtige Passwort ein und finde es heraus! :) (Version 1.3)</h3>
-			<p><input type="password" ng-model="password" /></p>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length != 0" ng-click="validatePassword()">
-			  Probiers aus :)
-			</button>
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length == 0" ng-disabled="true">
-			  Gib etwas ein :) und dann kannst du es probieren.
-			</button>
-			<div class="modal fade" id="myModal" >
-			  <div class="modal-dialog">
-				<div class="modal-content">
-				  <div class="modal-header">
+<div class="jumbotron">
+	<h3>Was kann dein Geschenk wohl sein??? Gib das richtige Passwort ein und finde es heraus! :) (Version 1.4)</h3>
+	<p><input type="password" ng-model="password" /></p>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length != 0" ng-click="validatePassword()">
+		Probiers aus :)
+	</button>
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-show="password.length == 0" ng-disabled="true">
+		Gib etwas ein :) und dann kannst du es probieren.
+	</button>
+	<div class="modal fade" id="myModal" >
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 					<h4 class="modal-title" ng-show="contentCounter == 0">Leider nein...</h4>
 					<h4 class="modal-title" ng-show="contentCounter == 1">Wooooow...</h4>
 					<h4 class="modal-title" ng-show="contentCounter == 2">Oder vielleicht...</h4>
 					<h4 class="modal-title" ng-show="contentCounter == 3">Aber nein...</h4>
-				  </div>
-				  <div class="modal-body">
+				</div>
+				<div class="modal-body">
 					<p ng-show="contentCounter == 0">Leider das falsche Passwort, aber vielleicht kann dir ja jemand einen Tipp geben :)?</p>
 					<p ng-show="contentCounter == 1">Vielleicht bin ich dein Geschenk?  Probier es erneut und finde es heraus. <br/>
 						<img src="http://s1.eltern.de/thumbnails/0001/00000000001/05/8d/400pxx300px/058d4f372d6d28d5cb240d3ca54245b1uniqueidhund_geschenk.jpg" class="img-circle"/>
@@ -25,13 +25,12 @@
 					<p ng-show="contentCounter == 2">Vielleicht bin es auch ich :)??<br/>
 						<img src="http://www.allmystery.de/i/t2fbb04_13004306.jpg" width="400" height="300" class="img-circle"/>
 					</p>
-					<p ng-show="contentCounter == 3">Doch nicht. Es ist etwas gaaaanz anderes :)
-					</p>
-				  </div>
-				  <div class="modal-footer">
+					<p ng-show="contentCounter == 3">Doch nicht. Es ist etwas gaaaanz anderes :)</p>
+				</div>
+				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				  </div>
-				</div><!-- /.modal-content -->
-			  </div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
+				</div>
+			</div>
 		</div>
+	</div>
+</div>
