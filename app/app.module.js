@@ -29,7 +29,7 @@ app.controller('wichtigstesDatumController', function($scope, $state) {
 app.controller('startController', function($scope, $state) {
 	$scope.password = "";
 	$scope.validatePassword = function(){
-		if($scope.password === "23.03.2011"){
+		if($scope.password === "23.04.2011"){
 			alert("Juhuu richtig");
 			$state.go("startOK");
 		}
