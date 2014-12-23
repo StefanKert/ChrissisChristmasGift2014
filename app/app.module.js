@@ -1,24 +1,37 @@
 ﻿var app = angular.module('ChrissiChristmasGift2014App', ['ui.router']);
 
 
-app.controller('baseController', function($scope) {
+app.controller('baseController', function($scope, $state) {
 	$scope.password = "";
-	$scope.contentCounter = -1;
 	$scope.validatePassword = function(){
-		$scope.contentCounter++;
-		if($scope.contentCounter > 3){
-			alert("Leider zu oft das falsche Passwort eingegeben. Wenn du auf OK klickst wird das Geschenk zerstört.")
-			alert("Nur ein Scherz.");
-			alert("Du musst jetzt nur noch 100 Meldungen Bestätigen.");
-			alert("Auch nur ein Scherz. Du wirst jetzt zu google weitergeleitet vielleicht hilft dir da jemand.");
-			window.location.href = "http://google.com";
+		if($scope.password === "23.03.2011"){
+			alert("Juhuu richtig");
+			$state.go("wichtigstesDatum");
 		}
 	};
 });
 
+app.controller('leiderNeinAberCoolesLiedController', function($scope, $state) {
+	var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
+	
+	if(is_mobile){
+		alert("Schatzi :) Mobile Geräte sind nicht erlaubt :P probiers am Computer nochmal :).");
+		$state.go("home");
+	}
+});
+
+app.controller('wichtigstesDatumController', function($scope, $state) {
+	var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
+	
+	if(is_mobile){
+		alert("Schatzi :) Mobile Geräte sind nicht erlaubt :P probiers am Computer nochmal :).");
+		$state.go("home");
+	}
+});
+
 app.controller('AppController', function ($scope, $http, $rootScope, $location, $state) {
     $rootScope.showReturn = false;
-    
+
     $rootScope.$on('$stateChangeError', function () {
         $location.path($location.path());
     });
