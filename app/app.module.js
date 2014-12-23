@@ -11,7 +11,7 @@ app.controller('baseController', function($scope, $state) {
 	};
 });
 
-app.controller('thinkingAboutYou', function($scope, $state) {
+app.controller('thinkingAboutYouController', function($scope, $state) {
 	var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
 	
 	if(is_mobile){
