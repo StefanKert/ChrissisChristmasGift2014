@@ -10,10 +10,10 @@
 			controller: 'startController',
 			templateUrl: 'app/components/start/start.html'
 		})
-        .state('leiderNeinAberCoolesLied', {
-            url: '/leiderNeinAberCoolesLied',
-			controller: 'leiderNeinAberCoolesLiedController',
-			templateUrl: 'app/components/leiderNeinAberCoolesLied/leiderNeinAberCoolesLied.html'
+        .state('thinkingAboutYou', {
+            url: '/thinkingAboutYou',
+			controller: 'thinkingAboutYouController',
+			templateUrl: 'app/components/thinkingAboutYou/thinkingAboutYou.html'
         })
 		.state('wichtigstesDatum', {
             url: '/wichtigstesDatum',
